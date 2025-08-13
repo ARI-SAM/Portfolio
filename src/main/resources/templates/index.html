@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Your Name — Portfolio</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+<nav class="nav">
+    <div class="container">
+        <a class="logo" href="#">YourName</a>
+        <button id="navToggle" class="nav-toggle">☰</button>
+        <ul id="navLinks" class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="container hero-inner">
+        <div class="hero-text">
+            <h1>Hi, I'm <span class="accent">Your Name</span></h1>
+            <p class="lead">Java developer • Backend & web • Open source</p>
+            <p class="cta-row">
+                <a class="btn btn-primary" href="#projects">See my work</a>
+                <a class="btn" href="#" target="_blank">Resume</a>
+            </p>
+        </div>
+        <div class="hero-card">
+            <img th:src="@{/images/profile.jpg}" alt="Profile" />
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <section id="about" class="section about">
+        <h2>About</h2>
+        <p>Short bio — who you are, what you build, and what you care about.</p>
+    </section>
+
+    <section id="projects" class="section projects">
+        <h2>Projects</h2>
+        <div class="grid">
+            <article class="card">
+                <h3>Project One</h3>
+                <p>Short description. Tech: Java, Spring Boot</p>
+                <p><a href="#" target="_blank">View on GitHub</a></p>
+            </article>
+            <article class="card">
+                <h3>Project Two</h3>
+                <p>Short description. Tech: Spring, REST</p>
+                <p><a href="#" target="_blank">View on GitHub</a></p>
+            </article>
+        </div>
+    </section>
+
+    <section id="skills" class="section skills">
+        <h2>Skills</h2>
+        <div class="chips">
+            <span>Java</span><span>Spring Boot</span><span>REST</span><span>SQL</span><span>Git</span>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+        <p>GitHub: <a href="https://github.com/YOUR_USERNAME" target="_blank">github.com/YOUR_USERNAME</a></p>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>© <span th:text="${T(java.time.Year).now().value}">2025</span> Your Name • Built with Spring Boot</p>
+    </div>
+</footer>
+
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

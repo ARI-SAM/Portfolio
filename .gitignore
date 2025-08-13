@@ -1,0 +1,12 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+
+
+/target/
+/.idea/
+/.vscode/
+*.iml
+*.log
+*.class
+.DS_Store
