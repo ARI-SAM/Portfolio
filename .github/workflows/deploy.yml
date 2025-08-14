@@ -5,6 +5,9 @@ on:
     branches: ["main"]
   workflow_dispatch:
 
+permissions:
+  contents: write   # THIS IS IMPORTANT
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -25,5 +28,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./src/main/resources/static
           publish_branch: gh-pages
+          publish_dir: ./src/main/resources/static
