@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <title>Your Name — Portfolio</title>
-    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+    <!-- ✅ Direct CSS path -->
+    <link href="css/style.css" rel="stylesheet"/>
 </head>
 <body>
 <nav class="nav">
@@ -31,7 +32,8 @@
             </p>
         </div>
         <div class="hero-card">
-            <img th:src="@{/images/profile.jpg}" alt="Profile" />
+            <!-- ✅ Direct image path -->
+            <img src="images/profile.jpg" alt="Profile" />
         </div>
     </div>
 </header>
@@ -74,10 +76,12 @@
 
 <footer class="site-footer">
     <div class="container">
-        <p>© <span th:text="${T(java.time.Year).now().value}">2025</span> Your Name • Built with Spring Boot</p>
+        <!-- ✅ Replaced Thymeleaf year with plain text -->
+        <p>© 2025 Your Name • Built with HTML/CSS/JS</p>
     </div>
 </footer>
 
-<script th:src="@{/js/script.js}"></script>
+<!-- ✅ Direct JS path -->
+<script src="js/script.js"></script>
 </body>
 </html>
