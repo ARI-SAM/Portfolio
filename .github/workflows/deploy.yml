@@ -17,11 +17,14 @@ jobs:
 
       - name: Prepare deploy folder
         run: |
-          mkdir deploy
+          set -e
+          rm -rf deploy
+          mkdir -p deploy
           cp src/main/resources/templates/index.html deploy/index.html
-          cp -r src/main/resources/static/* deploy/
-          echo "Files prepared for deployment:"
-          ls -R deploy
+          if [ -d "src/main/resources/static" ]; then
+            cp -r src/main/resources/static/* deploy/
+          fi
+          echo "Deploy contents:" && find deploy -maxdepth 2 -type f -print
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
