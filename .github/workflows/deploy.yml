@@ -21,12 +21,18 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Build (package)
-        run: mvn -B -DskipTests package
+      - name: Copy index.html for deployment
+        run: |
+          mkdir deploy
+          cp src/main/resources/templates/index.html deploy/index.html
+          cp -r src/main/resources/static/* deploy/ || true
 
-      - name: Deploy static resources to gh-pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: ./src/main/resources/static
+          publish_dir: ./deploy
+
+
+
