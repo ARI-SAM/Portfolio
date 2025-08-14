@@ -1,4 +1,4 @@
-name: Deploy static to GitHub Pages
+name: CI/CD Portfolio
 
 on:
   push:
@@ -9,7 +9,26 @@ permissions:
   contents: write
 
 jobs:
+  build:
+    name: Continuous Integration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: HTML Validation
+        uses: Cyb3r-Jak3/html5validator-action@v1.0.1
+        with:
+          root: src/main/resources/templates
+
+      - name: CSS Lint
+        run: |
+          npm install -g stylelint
+          stylelint "src/main/resources/static/css/**/*.css" || true
+
   deploy:
+    name: Continuous Deployment
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -19,12 +38,8 @@ jobs:
         run: |
           rm -rf deploy
           mkdir -p deploy
-          # Copy HTML
           cp src/main/resources/templates/index.html deploy/index.html
-          # Copy ALL static files while keeping structure
           cp -r src/main/resources/static/* deploy/
-          echo "Final deploy structure:"
-          find deploy -type f
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
