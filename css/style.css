@@ -1,0 +1,11 @@
+/* Custom overrides for animations or extra styles */
+html {
+    scroll-behavior: smooth;
+}
+
+#navLinks.show {
+    display: flex !important;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Aritra Samanta — Portfolio</title>
+
+    <!-- ✅ Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ✅ Custom CSS -->
+    <link href="css/style.css" rel="stylesheet"/>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<!-- ✅ Navigation -->
+<nav class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center py-4">
+        <a href="#" class="text-xl font-bold text-blue-600">Aritra Samanta</a>
+        <button id="navToggle" class="md:hidden text-2xl">☰</button>
+        <ul id="navLinks" class="hidden md:flex space-x-6">
+            <li><a href="#about" class="hover:text-blue-600">About</a></li>
+            <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
+            <li><a href="#skills" class="hover:text-blue-600">Skills</a></li>
+            <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ✅ Hero Section -->
+<header class="bg-gradient-to-r from-blue-50 to-blue-100 py-12">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+        <div class="text-center md:text-left">
+            <h1 class="text-4xl md:text-5xl font-bold">Hi, I'm <span class="text-blue-600">Aritra Samanta</span></h1>
+            <p class="text-lg mt-4">Java developer • Backend & web • Open source</p>
+            <div class="mt-6 flex flex-wrap gap-4 justify-center md:justify-start">
+                <a href="#projects" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700">See my work</a>
+                <a href="#" target="_blank" class="border border-blue-600 px-5 py-2 rounded-lg hover:bg-blue-50">Resume</a>
+            </div>
+        </div>
+        <img src="images/profile.jpg" alt="Profile" class="w-48 h-48 rounded-full object-cover shadow-lg">
+    </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 py-12">
+    <!-- About -->
+    <section id="about" class="mb-12">
+        <h2 class="text-3xl font-bold mb-4">About</h2>
+        <p class="text-white leading-relaxed">
+            Motivated and detail-oriented MCA Computer Application student with a strong foundation in algorithms, data
+            structures, and database management system. Passionate about solving complex problems in AI-ML,
+            Cybersecurity, and high-performance computing. Seeking an opportunity to apply my skills and contribute to
+            innovative IT solutions.
+        </p>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="mb-12">
+        <h2 class="text-3xl font-bold mb-6">Projects</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold mb-2">Project One</h3>
+                <p class="text-gray-600 mb-3">Short description. Tech: Java, Spring Boot</p>
+                <a href="#" target="_blank" class="text-blue-600 hover:underline">View on GitHub</a>
+            </article>
+            <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                <h3 class="text-xl font-semibold mb-2">Project Two</h3>
+                <p class="text-gray-600 mb-3">Short description. Tech: Spring, REST</p>
+                <a href="#" target="_blank" class="text-blue-600 hover:underline">View on GitHub</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="mb-12">
+        <h2 class="text-3xl font-bold mb-6">Skills</h2>
+        <div class="flex flex-wrap gap-3">
+            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Java</span>
+            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Spring Boot</span>
+            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">REST</span>
+            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">SQL</span>
+            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Git</span>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="mb-12">
+        <h2 class="text-3xl font-bold mb-4">Contact</h2>
+        <p>Email: <a href="mailto:aritra.samanta963@gmail.com" class="text-blue-600 hover:underline">aritra.samanta963@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/ARI-SAM" target="_blank" class="text-blue-600 hover:underline">github.com/ARI-SAM</a></p>
+    </section>
+</main>
+
+<!-- ✅ Footer -->
+<footer class="bg-gray-900 text-white py-6 text-center">
+    <p>© 2025 Aritra Samanta • Built with Tailwind CSS</p>
+</footer>
+
+<!-- ✅ JS -->
+<script src="js/script.js"></script>
+</body>
+</html>
