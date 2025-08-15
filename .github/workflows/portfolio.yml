@@ -3,9 +3,6 @@ name: CI/CD Portfolio
 on:
   push:
     branches: ["main"]
-    paths:
-      - "src/main/resources/templates/**"
-      - "src/main/resources/static/**"
   workflow_dispatch:
 
 permissions:
@@ -19,7 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # HTML Validation (currently disabled)
+      # Optional: HTML Validation
       # - name: HTML Validation
       #   uses: Cyb3r-Jak3/html5validator-action@v1.0.0
       #   with:
@@ -45,11 +42,10 @@ jobs:
           cp src/main/resources/templates/index.html deploy/index.html
           cp -r src/main/resources/static/* deploy/
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages (force overwrite)
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./deploy
           force_orphan: true
-
