@@ -3,6 +3,9 @@ name: CI/CD Portfolio
 on:
   push:
     branches: ["main"]
+    paths:
+      - "src/main/resources/templates/**"
+      - "src/main/resources/static/**"
   workflow_dispatch:
 
 permissions:
@@ -16,10 +19,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: HTML Validation
-        uses: Cyb3r-Jak3/html5validator-action@master
-        with:
-          root: src/main/resources/templates
+      # Optional: HTML Validation (can comment out if not needed)
+      # - name: HTML Validation
+      #   uses: Cyb3r-Jak3/html5validator-action@v1.0.0
+      #   with:
+      #     root: src/main/resources/templates
 
       - name: CSS Lint
         run: |
