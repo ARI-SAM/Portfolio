@@ -19,7 +19,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Optional: HTML Validation (can comment out if not needed)
+      # HTML Validation (currently disabled)
       # - name: HTML Validation
       #   uses: Cyb3r-Jak3/html5validator-action@v1.0.0
       #   with:
